@@ -12,6 +12,8 @@ class App extends Component {
   };
 
   switchNameHandler = () => {
+    // this.setState because this refers to the class that we're in, and setState
+    // is a special function to change the state.
     this.setState({
       persons: [
         { name: "Maximillian", age: 28 },
@@ -25,6 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
+        {/* this.the function name but not calling it */}
         <button onClick={this.switchNameHandler}>Switch Name</button>
 
         <Person
